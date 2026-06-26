@@ -18,6 +18,12 @@ These visualizations are generated automatically by `demo_lunarfm.py`, mapping c
 ![Terrain Clusters](assets/ohrc_terrain_clusters.png)
 *K-Means Terrain Segmentation (Unsupervised)*
 
+### Radar Analytics (DFSAR L-band / S-band)
+These visualizations are generated automatically by `dfsar_processing.py`, combining physics-based CPR metrics with S-band Yamaguchi decompositions to detect deeply buried water-ice.
+
+![DFSAR Ice Detection Map](assets/dfsar_ice_detection.png)
+*DFSAR 100km x 100km South Pole Crop (L-band CPR, Ice Anomaly Map, Yamaguchi RGB)*
+
 ---
 
 ## 🚀 Quick Start & Reproducibility
