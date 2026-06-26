@@ -1,0 +1,21 @@
+# Python environments
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+env/
+
+# ISRO BAH Data (Do NOT commit heavy data!)
+dfsar_data/
+ohrc_data/
+LunarFM-Science-Release/weights/
+*.tif
+*.tiff
+*.IMG
+*.xml
+outputs/
+
+# IDEs
+.vscode/
+.idea/
