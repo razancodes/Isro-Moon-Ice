@@ -1,5 +1,5 @@
 # Detailed Project Context and Scientific Report
-**ISRO Build A Hackathon (BAH) - Problem Statement 8**
+**ISRO Bharatiya Anthariksh Hackathon (BAH) - Problem Statement 8**
 
 ## 1. Project Context & Objectives
 The discovery and characterization of water-ice in the lunar South Polar Region is a high-priority exploration objective for enabling sustained human presence on the Moon. Observations from Chandrayaan-2 offer unprecedented high-resolution optical (OHRC) and radar (DFSAR) datasets to probe these Permanently Shadowed Regions (PSRs). 
