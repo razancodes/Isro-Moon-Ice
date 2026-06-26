@@ -1,17 +1,17 @@
-# ISRO Build A Hackathon (BAH) - Problem Statement 8
+# ISRO Bharatiya Antariiksh Hackathon (BAH) - Problem Statement 8
 
 **Detection and Characterization of Subsurface Ice in Lunar South Polar Regions Using Chandrayaan-2 Radar and Imagery Data for Landing Site and Rover Traverse Planning**
 
 This repository contains an end-to-end processing pipeline integrating high-resolution optical imagery (OHRC) and dual-frequency synthetic aperture radar (DFSAR) from Chandrayaan-2. It satisfies both the Physics-based radar track and the AI-driven representation track of Problem Statement 8.
 
-## 🌌 What We Have Accomplished (In Simple Terms)
-Finding ice on the Moon is incredibly difficult because rough rocks and deep craters can easily confuse satellite sensors. We tackled this problem by building two completely separate computer programs (pipelines) that analyze different types of satellite data, ultimately working together to find the safest path to the ice:
+## Core Idea behind the Problem statement and how we have approached it: 
+Finding ice on the Moon is incredibly difficult because rough rocks and deep craters can easily confuse satellite sensors. We tackled this problem by building two completely pipelines that analyze different types of satellite data, ultimately working together to find the safest path to the ice:
 
 1. **The Radar Pipeline (DFSAR)**: We used Chandrayaan-2's dual-frequency radar to peer up to 5 meters *beneath* the lunar dust. By mathematically comparing the L-band (deep penetration) and S-band (shallow penetration) radar signals, we successfully filtered out false-positive rocks and identified **456 square kilometers of deeply buried water-ice**.
 2. **The Optical AI Pipeline (OHRC)**: Using Chandrayaan-2's ultra-high-resolution optical camera (capable of seeing objects as small as 25cm), we mapped the exact physical hazards on the surface. We used classical computer vision to detect boulders and steep slopes, and an advanced AI Foundation Model (LunarFM) to automatically group the terrain into safe vs. dangerous zones.
 
 ### What Is Left To Do?
-The final step of the hackathon (Problem Statement 8) is **Rover Traverse Path Planning**. Now that we have mapped the underground ice (the destination) and the surface hazards (the obstacles), we will build an A* (A-Star) navigation algorithm. This algorithm will simulate a rover landing in a safe, flat zone and autonomously driving to the ice without falling into steep craters or hitting boulders.
+- **Rover Traverse Path Planning**. Now that we have mapped the underground ice (the destination) and the surface hazards (the obstacles), This algorithm will simulate a rover landing in a safe, flat zone and autonomously driving to the ice without falling into steep craters or hitting boulders.
 
 ---
 
