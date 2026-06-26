@@ -896,7 +896,7 @@ graph TD
 | Cloude & Pottier 1996 | H-A-α polarimetric decomposition |
 | Raney et al. 2012 | Hybrid-polarity CPR and m-chi decomposition |
 
-## C. Open Questions
+## C. Open Questions (To be answered on the day of the hackathon) 
 
 > [!IMPORTANT]
 > **GPU access**: Tiers 2/3 need ≥4GB VRAM (8GB+ preferred). Without GPU → implement Tier 1 + physics features + improved rover planner.
