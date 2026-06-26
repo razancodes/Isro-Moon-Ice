@@ -4,25 +4,39 @@
 
 This repository contains an end-to-end processing pipeline integrating high-resolution optical imagery (OHRC) and dual-frequency synthetic aperture radar (DFSAR) from Chandrayaan-2. It satisfies both the Physics-based radar track and the AI-driven representation track of Problem Statement 8.
 
-## 🌌 Pipeline Visualizations
+## 🌌 What We Have Accomplished (In Simple Terms)
+Finding ice on the Moon is incredibly difficult because rough rocks and deep craters can easily confuse satellite sensors. We tackled this problem by building two completely separate computer programs (pipelines) that analyze different types of satellite data, ultimately working together to find the safest path to the ice:
+
+1. **The Radar Pipeline (DFSAR)**: We used Chandrayaan-2's dual-frequency radar to peer up to 5 meters *beneath* the lunar dust. By mathematically comparing the L-band (deep penetration) and S-band (shallow penetration) radar signals, we successfully filtered out false-positive rocks and identified **456 square kilometers of deeply buried water-ice**.
+2. **The Optical AI Pipeline (OHRC)**: Using Chandrayaan-2's ultra-high-resolution optical camera (capable of seeing objects as small as 25cm), we mapped the exact physical hazards on the surface. We used classical computer vision to detect boulders and steep slopes, and an advanced AI Foundation Model (LunarFM) to automatically group the terrain into safe vs. dangerous zones.
+
+### What Is Left To Do?
+The final step of the hackathon (Problem Statement 8) is **Rover Traverse Path Planning**. Now that we have mapped the underground ice (the destination) and the surface hazards (the obstacles), we will build an A* (A-Star) navigation algorithm. This algorithm will simulate a rover landing in a safe, flat zone and autonomously driving to the ice without falling into steep craters or hitting boulders.
+
+---
+
+## 📸 Pipeline Visualizations
 
 ### Optical Analytics (OHRC 0.25m/pixel)
-These visualizations are generated automatically by `demo_lunarfm.py`, mapping classical terrain hazards alongside LunarFM AI terrain segmentation.
+These visualizations are generated automatically by `demo_lunarfm.py`. They operate on ultra-high-resolution optical data to map surface hazards that a rover must avoid.
 
 ![Classical Analytics](assets/ohrc_classical_analytics.png)
-*Terrain Hazard Map (Roughness, PSR Shadows, Boulder Detection)*
+**Terrain Hazard Map:** This image shows the results of our classical computer vision algorithms. It highlights Permanently Shadowed Regions (PSRs) in dark blue (areas that never see sunlight and are dangerously cold), extremely rough slopes in yellow/red, and individual boulders (red dots) detected using a Laplacian of Gaussian blob detector.
 
 ![LunarFM PCA Embeddings](assets/ohrc_pca_false_color.png)
-*LunarFM Unsupervised Embeddings (PCA False Color)*
+**LunarFM AI Embeddings (PCA False Color):** This image represents the "brain" of the AI. We passed the lunar surface through ISRO's pre-trained Foundation Model (MultiMAE) to extract 768-dimensional features. We compressed these features into RGB colors using Principal Component Analysis (PCA). Similar colors mean the AI thinks the terrain has a similar physical and geological structure.
 
 ![Terrain Clusters](assets/ohrc_terrain_clusters.png)
-*K-Means Terrain Segmentation (Unsupervised)*
+**K-Means Terrain Segmentation:** Here, we asked the AI to group the terrain into 6 distinct categories without any human supervision. The AI successfully separated flat crater floors (safe for driving), steep illuminated rims, and dark shadows entirely on its own.
 
 ### Radar Analytics (DFSAR L-band / S-band)
-These visualizations are generated automatically by `dfsar_processing.py`, combining physics-based CPR metrics with S-band Yamaguchi decompositions to detect deeply buried water-ice.
+These visualizations are generated automatically by `dfsar_processing.py`. They combine physics-based radar metrics to look *beneath* the surface.
 
 ![DFSAR Ice Detection Map](assets/dfsar_ice_detection.png)
-*DFSAR 100km x 100km South Pole Crop (L-band CPR, Ice Anomaly Map, Yamaguchi RGB)*
+**Subsurface Ice Anomaly Map:** This is a massive 100km x 100km crop of the Lunar South Pole. 
+- **Left (CPR):** Shows the raw L-band Circular Polarization Ratio. Bright areas indicate strong radar scattering (which could be ice OR rough rocks).
+- **Center (Ice Map):** The culmination of our physics pipeline. We overlay the CPR with the S-band Degree of Polarization. **Bright lime green** pixels represent confirmed subsurface water-ice (where the radar signature strengthens with depth). Orange pixels are rejected false-positive rocky areas.
+- **Right (RGB):** The Yamaguchi S-band decomposition. Red shows surface scattering, green shows double-bounce (rocks/craters), and blue shows volumetric scattering (deep ice/dust).
 
 ---
 
