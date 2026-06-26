@@ -12,6 +12,7 @@ Finding ice on the Moon is incredibly difficult because rough rocks and deep cra
 
 ### What Is Left To Do?
 - **Rover Traverse Path Planning**. Now that we have mapped the underground ice (the destination) and the surface hazards (the obstacles), This algorithm will simulate a rover landing in a safe, flat zone and autonomously driving to the ice without falling into steep craters or hitting boulders.
+- **[LunarFM-IceNet Hackathon Plan](hackathon_plan.md)**: We have formulated a complete, tiered research plan to fuse these pipelines and build an end-to-end physics-informed foundation model. Read the [full implementation roadmap here](hackathon_plan.md).
 
 ---
 
