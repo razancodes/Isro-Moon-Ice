@@ -4,6 +4,20 @@
 
 This repository contains an end-to-end processing pipeline integrating high-resolution optical imagery (OHRC) and dual-frequency synthetic aperture radar (DFSAR) from Chandrayaan-2. It satisfies both the Physics-based radar track and the AI-driven representation track of Problem Statement 8.
 
+## 🌌 Pipeline Visualizations
+
+### Optical Analytics (OHRC 0.25m/pixel)
+These visualizations are generated automatically by `demo_lunarfm.py`, mapping classical terrain hazards alongside LunarFM AI terrain segmentation.
+
+![Classical Analytics](assets/ohrc_classical_analytics.png)
+*Terrain Hazard Map (Roughness, PSR Shadows, Boulder Detection)*
+
+![LunarFM PCA Embeddings](assets/ohrc_pca_false_color.png)
+*LunarFM Unsupervised Embeddings (PCA False Color)*
+
+![Terrain Clusters](assets/ohrc_terrain_clusters.png)
+*K-Means Terrain Segmentation (Unsupervised)*
+
 ---
 
 ## 🚀 Quick Start & Reproducibility
